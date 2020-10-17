@@ -23,6 +23,8 @@
 		19190783253A2501001FCE5B /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190782253A2501001FCE5B /* NetworkClient.swift */; };
 		19190789253A30F0001FCE5B /* LineTVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190788253A30F0001FCE5B /* LineTVAPI.swift */; };
 		19190796253A3350001FCE5B /* LineTVAPI+Dramas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190795253A3350001FCE5B /* LineTVAPI+Dramas.swift */; };
+		19F7DE85253AF3E700D01A35 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F7DE84253AF3E700D01A35 /* NetworkMonitor.swift */; };
+		88857443F7AD716C2160DFF5 /* Pods_DramasSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EF867E60ECE9742F6EF7EF /* Pods_DramasSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,10 @@
 		19190782253A2501001FCE5B /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		19190788253A30F0001FCE5B /* LineTVAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTVAPI.swift; sourceTree = "<group>"; };
 		19190795253A3350001FCE5B /* LineTVAPI+Dramas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineTVAPI+Dramas.swift"; sourceTree = "<group>"; };
+		19F7DE84253AF3E700D01A35 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		24EF867E60ECE9742F6EF7EF /* Pods_DramasSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DramasSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C18098B3C6389AC09BF44F /* Pods-DramasSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramasSample.release.xcconfig"; path = "Target Support Files/Pods-DramasSample/Pods-DramasSample.release.xcconfig"; sourceTree = "<group>"; };
+		7C29C657099FE191D21DBDEE /* Pods-DramasSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramasSample.debug.xcconfig"; path = "Target Support Files/Pods-DramasSample/Pods-DramasSample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88857443F7AD716C2160DFF5 /* Pods_DramasSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +106,8 @@
 				19190719253959F5001FCE5B /* DramasSampleTests */,
 				19190724253959F5001FCE5B /* DramasSampleUITests */,
 				191906FE253959F4001FCE5B /* Products */,
+				EA52FDBEC4A5B5E1C7E32041 /* Pods */,
+				902B01D8BF330F7F38142DE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +195,7 @@
 		1919074825395D5E001FCE5B /* OfflineMode */ = {
 			isa = PBXGroup;
 			children = (
+				19F7DE84253AF3E700D01A35 /* NetworkMonitor.swift */,
 			);
 			path = OfflineMode;
 			sourceTree = "<group>";
@@ -224,6 +234,24 @@
 			path = LineTV;
 			sourceTree = "<group>";
 		};
+		902B01D8BF330F7F38142DE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24EF867E60ECE9742F6EF7EF /* Pods_DramasSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA52FDBEC4A5B5E1C7E32041 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C29C657099FE191D21DBDEE /* Pods-DramasSample.debug.xcconfig */,
+				62C18098B3C6389AC09BF44F /* Pods-DramasSample.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,9 +259,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1919072A253959F5001FCE5B /* Build configuration list for PBXNativeTarget "DramasSample" */;
 			buildPhases = (
+				160E0C77DBB261C8D865FFD9 /* [CP] Check Pods Manifest.lock */,
 				191906F9253959F4001FCE5B /* Sources */,
 				191906FA253959F4001FCE5B /* Frameworks */,
 				191906FB253959F4001FCE5B /* Resources */,
+				33FA445F392773646EBB291A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -349,12 +379,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		160E0C77DBB261C8D865FFD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DramasSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33FA445F392773646EBB291A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DramasSample/Pods-DramasSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DramasSample/Pods-DramasSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DramasSample/Pods-DramasSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		191906F9253959F4001FCE5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				19190796253A3350001FCE5B /* LineTVAPI+Dramas.swift in Sources */,
+				19F7DE85253AF3E700D01A35 /* NetworkMonitor.swift in Sources */,
 				1919074425395C74001FCE5B /* DramaInfoViewController.swift in Sources */,
 				1919077E253A11EF001FCE5B /* StarView2.swift in Sources */,
 				19190789253A30F0001FCE5B /* LineTVAPI.swift in Sources */,
@@ -537,6 +610,7 @@
 		};
 		1919072B253959F5001FCE5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C29C657099FE191D21DBDEE /* Pods-DramasSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -555,6 +629,7 @@
 		};
 		1919072C253959F5001FCE5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62C18098B3C6389AC09BF44F /* Pods-DramasSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
