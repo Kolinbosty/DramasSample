@@ -25,6 +25,7 @@ class DramaListViewModel: NSObject {
 
     private var currentSearchText: String?
     private var isNetworkConnected: Bool = true
+    private var willSkipReload: Bool = false
 
     init(collectionView: UICollectionView?,
          emptyResultView: UIView?,
@@ -131,6 +132,13 @@ extension UICollectionViewDiffableDataSource {
 
 // MARK: - Operation
 extension DramaListViewModel {
+    // Any reload trigger from block will be ignore
+    func skipReload(while block: () -> Void) {
+        willSkipReload = true
+        block()
+        willSkipReload = false
+    }
+
     func fetchDataAndReload(completion: @escaping (Bool) -> Void) {
         LineTVAPI.client.fetchDramas { [self] (result) in
             switch result {
@@ -155,6 +163,9 @@ extension DramaListViewModel {
     /// Construct & Apply Snapshot
     /// - Parameter checkEmpty: Will check empty result or not.
     func reloadValues(checkEmpty: Bool = true) {
+        // Ignore
+        guard !willSkipReload else { return }
+
         // Create Snapshot
         var snapshot = Snapshot()
 

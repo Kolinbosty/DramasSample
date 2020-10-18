@@ -34,11 +34,8 @@ class DramaListViewController: UIViewController {
         initializeUI()
         setupSearchController()
         setupRefreshControl()
-    }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
+        // Fetch Data
         reloadData()
     }
 
@@ -98,12 +95,21 @@ class DramaListViewController: UIViewController {
 extension DramaListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         viewModel.search(title: searchController.searchBar.text)
+
+        // Update local storage
+        OfflineModeStorage.standard.saveSearchKeyword(searchController.searchBar.text)
     }
 
     private func setupSearchController() {
         searchController.searchBar.placeholder = "影集名稱"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
+
+        // Load default search text
+        viewModel.skipReload {
+            let previousSearchText = OfflineModeStorage.standard.loadSearchKeyword()
+            searchController.searchBar.text = previousSearchText
+        }
 
         navigationItem.searchController = searchController
         definesPresentationContext = true

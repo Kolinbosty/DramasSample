@@ -39,22 +39,29 @@ extension NetworkClient {
         let session = URLSession(configuration: .ephemeral, delegate: nil, delegateQueue: .main)
         let request = URLRequest(url: url)
         session.dataTask(with: request) { (data, respones, error) in
+            // Local cache
+            let localCache = OfflineModeStorage.standard.loadAPIData(urlStr: url.absoluteString)
+            let hasCache = localCache != nil
+
             // Error checking
-            guard error == nil else {
-                completion(.failure(.connectionError))
-                return
+            if !hasCache {
+                guard error == nil else {
+                    completion(.failure(.connectionError))
+                    return
+                }
+
+                guard let httpResponse = respones as? HTTPURLResponse,
+                      httpResponse.statusCode == 200 else {
+                    completion(.failure(.invalidResponse))
+                    return
+                }
             }
 
-            guard let httpResponse = respones as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
-                completion(.failure(.invalidResponse))
-                return
-            }
-
-            guard let data = data else {
+            guard let data = data ?? localCache else {
                 completion(.failure(.invalidData))
                 return
             }
+            OfflineModeStorage.standard.saveAPIData(urlStr: url.absoluteString, data: data)
 
             // Decode
             guard let result = try? jsonDecoder.decode(T.self, from: data) else {
