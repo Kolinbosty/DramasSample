@@ -51,7 +51,8 @@ class DramaCell: BasicCollectionViewCell {
         let attributes = super.preferredLayoutAttributesFitting(layoutAttributes)
 
         // Calculate Width
-        let cellCountInLine: CGFloat = 2.0
+        let isLandscape = UIApplication.shared.isLandscape
+        let cellCountInLine: CGFloat = isLandscape ? 4.0 : 2.0
         let separatorCount: CGFloat = cellCountInLine - 1.0
         let spacing: CGFloat = 10.0
         let hMargin: CGFloat = 10.0
