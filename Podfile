@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'DramasSample' do
   pod 'Kingfisher'
+  pod 'JGProgressHUD'
 end

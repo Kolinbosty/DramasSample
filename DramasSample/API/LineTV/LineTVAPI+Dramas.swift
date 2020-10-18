@@ -20,7 +20,7 @@ extension LineTVAPI {
         let data: [Drama]
     }
 
-    struct Drama: Codable {
+    struct Drama: Codable, Hashable {
         let dramaId: Int
         let name: String
         let totalViews: Int

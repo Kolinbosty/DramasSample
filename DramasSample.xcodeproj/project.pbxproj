@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191139AF253C0F30008A6F5E /* OfflineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139AE253C0F30008A6F5E /* OfflineCell.swift */; };
+		191139B4253C0F44008A6F5E /* OfflineCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139B3253C0F44008A6F5E /* OfflineCellViewModel.swift */; };
+		191139B9253C1629008A6F5E /* DramaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139B8253C1629008A6F5E /* DramaListViewModel.swift */; };
+		191139BE253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139BD253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		191139C6253C3244008A6F5E /* UIColor+ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139C5253C3244008A6F5E /* UIColor+ColorSet.swift */; };
 		19190701253959F4001FCE5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190700253959F4001FCE5B /* AppDelegate.swift */; };
 		19190703253959F4001FCE5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190702253959F4001FCE5B /* SceneDelegate.swift */; };
 		19190708253959F4001FCE5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19190706253959F4001FCE5B /* Main.storyboard */; };
@@ -23,6 +28,9 @@
 		19190783253A2501001FCE5B /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190782253A2501001FCE5B /* NetworkClient.swift */; };
 		19190789253A30F0001FCE5B /* LineTVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190788253A30F0001FCE5B /* LineTVAPI.swift */; };
 		19190796253A3350001FCE5B /* LineTVAPI+Dramas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190795253A3350001FCE5B /* LineTVAPI+Dramas.swift */; };
+		195D117D253B7097003184F7 /* DramaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D117C253B7097003184F7 /* DramaCell.swift */; };
+		195D1182253B7D8F003184F7 /* DramaCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D1181253B7D8F003184F7 /* DramaCellViewModel.swift */; };
+		195D1187253B8206003184F7 /* BasicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D1186253B8206003184F7 /* BasicCollectionViewCell.swift */; };
 		19F7DE85253AF3E700D01A35 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F7DE84253AF3E700D01A35 /* NetworkMonitor.swift */; };
 		88857443F7AD716C2160DFF5 /* Pods_DramasSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EF867E60ECE9742F6EF7EF /* Pods_DramasSample.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		191139AE253C0F30008A6F5E /* OfflineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineCell.swift; sourceTree = "<group>"; };
+		191139B3253C0F44008A6F5E /* OfflineCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineCellViewModel.swift; sourceTree = "<group>"; };
+		191139B8253C1629008A6F5E /* DramaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaListViewModel.swift; sourceTree = "<group>"; };
+		191139BD253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		191139C5253C3244008A6F5E /* UIColor+ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorSet.swift"; sourceTree = "<group>"; };
 		191906FD253959F4001FCE5B /* DramasSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DramasSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19190700253959F4001FCE5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19190702253959F4001FCE5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +80,9 @@
 		19190782253A2501001FCE5B /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		19190788253A30F0001FCE5B /* LineTVAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTVAPI.swift; sourceTree = "<group>"; };
 		19190795253A3350001FCE5B /* LineTVAPI+Dramas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineTVAPI+Dramas.swift"; sourceTree = "<group>"; };
+		195D117C253B7097003184F7 /* DramaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaCell.swift; sourceTree = "<group>"; };
+		195D1181253B7D8F003184F7 /* DramaCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaCellViewModel.swift; sourceTree = "<group>"; };
+		195D1186253B8206003184F7 /* BasicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewCell.swift; sourceTree = "<group>"; };
 		19F7DE84253AF3E700D01A35 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		24EF867E60ECE9742F6EF7EF /* Pods_DramasSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DramasSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C18098B3C6389AC09BF44F /* Pods-DramasSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramasSample.release.xcconfig"; path = "Target Support Files/Pods-DramasSample/Pods-DramasSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				191907642539837C001FCE5B /* Common */,
-				1919074925396890001FCE5B /* UIComponents */,
 				1919074825395D5E001FCE5B /* OfflineMode */,
 				1919073725395B1F001FCE5B /* API */,
 				1919073A25395B48001FCE5B /* Pages */,
@@ -161,7 +176,9 @@
 		1919073625395B08001FCE5B /* DramaListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				195D117B253B707D003184F7 /* Cell */,
 				1919073E25395C68001FCE5B /* DramaListViewController.swift */,
+				191139B8253C1629008A6F5E /* DramaListViewModel.swift */,
 			);
 			path = DramaListViewController;
 			sourceTree = "<group>";
@@ -220,7 +237,11 @@
 		191907642539837C001FCE5B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1919074925396890001FCE5B /* UIComponents */,
 				1919076A25398570001FCE5B /* UIImage+SFSymbol.swift */,
+				191139C5253C3244008A6F5E /* UIColor+ColorSet.swift */,
+				195D1186253B8206003184F7 /* BasicCollectionViewCell.swift */,
+				191139BD253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -232,6 +253,17 @@
 				19190795253A3350001FCE5B /* LineTVAPI+Dramas.swift */,
 			);
 			path = LineTV;
+			sourceTree = "<group>";
+		};
+		195D117B253B707D003184F7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				195D117C253B7097003184F7 /* DramaCell.swift */,
+				195D1181253B7D8F003184F7 /* DramaCellViewModel.swift */,
+				191139AE253C0F30008A6F5E /* OfflineCell.swift */,
+				191139B3253C0F44008A6F5E /* OfflineCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		902B01D8BF330F7F38142DE4 /* Frameworks */ = {
@@ -248,7 +280,6 @@
 				7C29C657099FE191D21DBDEE /* Pods-DramasSample.debug.xcconfig */,
 				62C18098B3C6389AC09BF44F /* Pods-DramasSample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -430,14 +461,22 @@
 				19F7DE85253AF3E700D01A35 /* NetworkMonitor.swift in Sources */,
 				1919074425395C74001FCE5B /* DramaInfoViewController.swift in Sources */,
 				1919077E253A11EF001FCE5B /* StarView2.swift in Sources */,
+				191139BE253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				191139B4253C0F44008A6F5E /* OfflineCellViewModel.swift in Sources */,
 				19190789253A30F0001FCE5B /* LineTVAPI.swift in Sources */,
 				1919073F25395C68001FCE5B /* DramaListViewController.swift in Sources */,
+				191139C6253C3244008A6F5E /* UIColor+ColorSet.swift in Sources */,
+				195D1182253B7D8F003184F7 /* DramaCellViewModel.swift in Sources */,
+				195D117D253B7097003184F7 /* DramaCell.swift in Sources */,
 				19190701253959F4001FCE5B /* AppDelegate.swift in Sources */,
 				1919076B25398570001FCE5B /* UIImage+SFSymbol.swift in Sources */,
+				195D1187253B8206003184F7 /* BasicCollectionViewCell.swift in Sources */,
+				191139B9253C1629008A6F5E /* DramaListViewModel.swift in Sources */,
 				19190783253A2501001FCE5B /* NetworkClient.swift in Sources */,
 				19190703253959F4001FCE5B /* SceneDelegate.swift in Sources */,
 				1919075425396CE9001FCE5B /* StarView.swift in Sources */,
 				1919070B253959F4001FCE5B /* DramasSample.xcdatamodeld in Sources */,
+				191139AF253C0F30008A6F5E /* OfflineCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

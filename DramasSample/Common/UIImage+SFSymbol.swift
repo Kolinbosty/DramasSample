@@ -48,6 +48,15 @@ struct SFSymbolProxy {
         let config = UIImage.SymbolConfiguration(pointSize: size)
         return UIImage(systemName: "star.leadinghalf.fill", withConfiguration: config)
     }
+
+    func reload(configuration: UIImage.Configuration? = nil) -> UIImage? {
+        return UIImage(systemName: "arrow.clockwise", withConfiguration: configuration)
+    }
+
+    func reload(size: CGFloat) -> UIImage? {
+        let config = UIImage.SymbolConfiguration(pointSize: size)
+        return UIImage(systemName: "arrow.clockwise", withConfiguration: config)
+    }
 }
 
 extension UIImage {

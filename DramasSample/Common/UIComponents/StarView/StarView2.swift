@@ -35,7 +35,9 @@ class StarView2: UILabel {
         self.style = .single
         super.init(coder: coder)
 
+        // Update
         updateText()
+        textColor = UIColor.cs.rating
     }
 
     init(_ rate: Double, style: Style = .single) {
@@ -43,7 +45,9 @@ class StarView2: UILabel {
         self.style = style
         super.init(frame: .zero)
 
+        // Update
         updateText()
+        textColor = UIColor.cs.rating
     }
 
     private func updateText() {
@@ -76,6 +80,7 @@ class StarView2: UILabel {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = 1
+        formatter.maximumFractionDigits = 1
         let numText = formatter.string(from: NSNumber(value: validValue)) ?? "0.0"
 
         // Update
@@ -87,23 +92,24 @@ class StarView2: UILabel {
 //    private func updateText() {
 //        // Range 0...5
 //        let validValue = max(0.0, min(5.0, rate))
-//
+//        
 //        // Stars
 //        let maxCount = 5
 //        let floorValue = Int(floor(validValue))
 //        let ceilValue = Int(ceil(validValue))
-//
+//        
 //        let fillStars = String(repeating: "􀋃", count: floorValue)
 //        let halfStars = String(repeating: "􀋄", count: ceilValue - floorValue)
 //        let emptyStars = String(repeating: "􀋂", count: maxCount - ceilValue)
 //        let starsText = fillStars + halfStars + emptyStars
-//
+//        
 //        // Number
 //        let formatter = NumberFormatter()
 //        formatter.numberStyle = .decimal
 //        formatter.minimumFractionDigits = 1
+//        formatter.maximumFractionDigits = 1
 //        let numText = formatter.string(from: NSNumber(value: validValue)) ?? "0.0"
-//
+//        
 //        self.text = "\(starsText) \(numText)"
 //    }
 }

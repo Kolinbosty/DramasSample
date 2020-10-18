@@ -1,18 +1,22 @@
 PODS:
+  - JGProgressHUD (2.2)
   - Kingfisher (5.15.6):
     - Kingfisher/Core (= 5.15.6)
   - Kingfisher/Core (5.15.6)
 
 DEPENDENCIES:
+  - JGProgressHUD
   - Kingfisher
 
 SPEC REPOS:
   trunk:
+    - JGProgressHUD
     - Kingfisher
 
 SPEC CHECKSUMS:
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
 
-PODFILE CHECKSUM: 8c0dc44d71df1bf8af2db25393f38d45c86125e2
+PODFILE CHECKSUM: 7794ae25cfcc25ce93d76262012aad597750db59
 
 COCOAPODS: 1.9.3

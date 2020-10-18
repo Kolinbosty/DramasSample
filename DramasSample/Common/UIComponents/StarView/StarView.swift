@@ -75,6 +75,7 @@ class StarView: UIView {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = 1
+        formatter.maximumFractionDigits = 1
         rateLabel?.text = formatter.string(from: NSNumber(value: rate))
 
         // Star
@@ -115,10 +116,10 @@ extension StarView {
         // Default
         static var standard: Configuration { Configuration() }
 
-        var preferHeight: CGFloat = 24.0
-        var starPointSize: CGFloat = 18.0
-        var starSpacing: CGFloat = 4.0
-        var labelFontSize: CGFloat = 18.0
+        var preferHeight: CGFloat = 20.0
+        var starPointSize: CGFloat = 15.0
+        var starSpacing: CGFloat = 2.0
+        var labelFontSize: CGFloat = 15.0
         var labelSpacing: CGFloat = 4.0
     }
 
@@ -179,7 +180,7 @@ extension StarView {
         let rateLabel = UILabel()
         rateLabel.translatesAutoresizingMaskIntoConstraints = false
         rateLabel.font = .boldSystemFont(ofSize: configuration.labelFontSize)
-        rateLabel.textColor = .systemGreen
+        rateLabel.textColor = UIColor.cs.rating
 
         // Add
         self.addSubview(rateLabel)
@@ -235,7 +236,7 @@ extension StarView {
         // Create
         let starImgView = UIImageView()
         starImgView.contentMode = .center
-        starImgView.tintColor = .systemGreen
+        starImgView.tintColor = UIColor.cs.rating
         starImgView.image = emptyStar
 
         // Add

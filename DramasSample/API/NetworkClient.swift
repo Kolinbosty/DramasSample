@@ -34,8 +34,9 @@ extension NetworkClient {
         url.appendPathComponent(path)
 
         // Note: 這邊其實可以把 Session & Request 把客製彈性開出去，有需要的時候再把 Protocol 補上即可。
+        // Note: 這邊也故意把 Cache 拿掉，相對容易複製出錯誤情境。
         // Send Request
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
+        let session = URLSession(configuration: .ephemeral, delegate: nil, delegateQueue: .main)
         let request = URLRequest(url: url)
         session.dataTask(with: request) { (data, respones, error) in
             // Error checking
