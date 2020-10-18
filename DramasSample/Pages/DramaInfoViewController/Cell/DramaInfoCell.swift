@@ -1,5 +1,5 @@
 //
-//  DramaCell.swift
+//  DramaInfoCell.swift
 //  DramasSample
 //
 //  Created by  Alex Lin on 2020/10/18.
@@ -9,19 +9,20 @@ import UIKit
 import Kingfisher
 
 // Note: 寫 Protocol，保留共用的彈性。
-protocol DaramaCellViewModelProtocol: BasicCollectionViewCellViewModel {
+protocol DramaInfoCellViewModelProtocol: BasicCollectionViewCellViewModel {
     var imageURL: URL? { get }
     var title: String { get }
     var dateText: String { get }
+    var totalViewsAttributedText: NSAttributedString { get }
     var rating: Double { get }
 }
 
-class DramaCell: BasicCollectionViewCell {
-
+class DramaInfoCell: BasicCollectionViewCell {
     // UI Properties
     private weak var imageView: UIImageView?
     private weak var titleLabel: UILabel?
     private weak var dateLabel: UILabel?
+    private weak var totalViewsLabel: UILabel?
     private weak var ratingView: StarView?
 
     required init?(coder: NSCoder) {
@@ -36,7 +37,7 @@ class DramaCell: BasicCollectionViewCell {
 
     override func update(with viewModel: BasicCollectionViewCellViewModel) {
         // Type checking
-        guard let viewModel = viewModel as? DaramaCellViewModelProtocol else {
+        guard let viewModel = viewModel as? DramaInfoCellViewModelProtocol else {
             assert(false, "Error: invalid view model?")
             return
         }
@@ -44,6 +45,7 @@ class DramaCell: BasicCollectionViewCell {
         imageView?.kf.setImage(with: viewModel.imageURL)
         titleLabel?.text = viewModel.title
         dateLabel?.text = viewModel.dateText
+        totalViewsLabel?.attributedText = viewModel.totalViewsAttributedText
         ratingView?.rate = viewModel.rating
     }
 
@@ -51,13 +53,7 @@ class DramaCell: BasicCollectionViewCell {
         let attributes = super.preferredLayoutAttributesFitting(layoutAttributes)
 
         // Calculate Width
-        let cellCountInLine: CGFloat = 2.0
-        let separatorCount: CGFloat = cellCountInLine - 1.0
-        let spacing: CGFloat = 10.0
-        let hMargin: CGFloat = 10.0
-        let availableWidth: CGFloat = UIScreen.main.bounds.width - (hMargin * 2.0) - (spacing * separatorCount)
-        let cellWidth: CGFloat = floor(availableWidth / cellCountInLine)
-
+        let cellWidth: CGFloat = UIScreen.main.bounds.width
         let size = self.systemLayoutSizeFitting(CGSize(width: cellWidth, height: 50.0), withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
         attributes.frame.size = size
 
@@ -65,13 +61,13 @@ class DramaCell: BasicCollectionViewCell {
     }
 }
 
-// MARK - UI
-extension DramaCell {
+extension DramaInfoCell {
     private func initializeUI() {
         // Create UI
         createImageView()
         createTitleLabel()
         createDateLabel()
+        createTotalViewsLabel()
         createRateView()
 
         // Setup Constraint
@@ -87,7 +83,6 @@ extension DramaCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 5.0
 
         // Add
         contentView.addSubview(imageView)
@@ -101,7 +96,7 @@ extension DramaCell {
         // Create & config
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.numberOfLines = 1
+        titleLabel.numberOfLines = 0
         titleLabel.textColor = UIColor.cs.title
 
         // Add
@@ -125,12 +120,28 @@ extension DramaCell {
         self.dateLabel = dateLabel
     }
 
+    private func createTotalViewsLabel() {
+        // Remove old
+        self.totalViewsLabel?.removeFromSuperview()
+
+        // Create & config
+        let totalViewsLabel = UILabel()
+        totalViewsLabel.translatesAutoresizingMaskIntoConstraints = false
+        totalViewsLabel.numberOfLines = 1
+        totalViewsLabel.font = .systemFont(ofSize: 12.0)
+        totalViewsLabel.textColor = UIColor.cs.subtitle
+
+        // Add
+        contentView.addSubview(totalViewsLabel)
+        self.totalViewsLabel = totalViewsLabel
+    }
+
     private func createRateView() {
         // Remove old
         self.ratingView?.removeFromSuperview()
 
         // Create & config
-        let ratingView = StarView(0.0, style: .single, configuration: .standard)
+        let ratingView = StarView(0.0, style: .full, configuration: .standard)
         ratingView.translatesAutoresizingMaskIntoConstraints = false
 
         // Add
@@ -142,6 +153,7 @@ extension DramaCell {
         guard let imageView = imageView,
               let titleLabel = titleLabel,
               let dateLabel = dateLabel,
+              let totalViewsLabel = totalViewsLabel,
               let ratingView = ratingView else {
             assert(false, "Error: must create UI first")
             return
@@ -149,7 +161,9 @@ extension DramaCell {
 
         // Constant
         let imageHScale: CGFloat = 1.4 // (1000x1404)
-        let vSpace: CGFloat = 2.0
+        let hMargin: CGFloat = 12.0
+        let hSpace: CGFloat = 4.0
+        let vSpace: CGFloat = 8.0
 
         // Image
         NSLayoutConstraint.activate([
@@ -162,15 +176,24 @@ extension DramaCell {
         // Title
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: vSpace),
-            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            titleLabel.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor),
+            titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
+                                             constant: hMargin),
+            titleLabel.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor,
+                                              constant: -hMargin),
         ])
 
-        // Date
+        // Date - Total Views
+        totalViewsLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: vSpace),
-            dateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            dateLabel.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor)
+            dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
+                                           constant: vSpace),
+            dateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
+                                            constant: hMargin),
+            totalViewsLabel.leftAnchor.constraint(greaterThanOrEqualTo: dateLabel.rightAnchor,
+                                                  constant: hSpace),
+            totalViewsLabel.bottomAnchor.constraint(equalTo: dateLabel.bottomAnchor),
+            totalViewsLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,
+                                                   constant: -hMargin)
         ])
 
         // Rate
@@ -178,7 +201,7 @@ extension DramaCell {
         ratingBottomConstraint.priority = .defaultHigh
         NSLayoutConstraint.activate([
             ratingView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: vSpace),
-            ratingView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            ratingView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: hMargin),
             ratingBottomConstraint
         ])
     }

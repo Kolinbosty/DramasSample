@@ -49,6 +49,7 @@ struct SFSymbolProxy {
         return UIImage(systemName: "star.leadinghalf.fill", withConfiguration: config)
     }
 
+    // Reload
     func reload(configuration: UIImage.Configuration? = nil) -> UIImage? {
         return UIImage(systemName: "arrow.clockwise", withConfiguration: configuration)
     }
@@ -56,6 +57,16 @@ struct SFSymbolProxy {
     func reload(size: CGFloat) -> UIImage? {
         let config = UIImage.SymbolConfiguration(pointSize: size)
         return UIImage(systemName: "arrow.clockwise", withConfiguration: config)
+    }
+
+    // Eye Fill
+    func eyeFilled(configuration: UIImage.Configuration? = nil) -> UIImage? {
+        return UIImage(systemName: "eye.fill", withConfiguration: configuration)
+    }
+
+    func eyeFilled(size: CGFloat) -> UIImage? {
+        let config = UIImage.SymbolConfiguration(pointSize: size)
+        return UIImage(systemName: "eye.fill", withConfiguration: config)
     }
 }
 

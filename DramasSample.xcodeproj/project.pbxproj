@@ -12,6 +12,9 @@
 		191139B9253C1629008A6F5E /* DramaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139B8253C1629008A6F5E /* DramaListViewModel.swift */; };
 		191139BE253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139BD253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		191139C6253C3244008A6F5E /* UIColor+ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139C5253C3244008A6F5E /* UIColor+ColorSet.swift */; };
+		191139D7253C94AD008A6F5E /* DramaInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139D6253C94AD008A6F5E /* DramaInfoViewModel.swift */; };
+		191139EA253C98F5008A6F5E /* DramaInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139E9253C98F5008A6F5E /* DramaInfoCell.swift */; };
+		191139F2253CB4FC008A6F5E /* DaramaInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139F1253CB4FC008A6F5E /* DaramaInfoCellViewModel.swift */; };
 		19190701253959F4001FCE5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190700253959F4001FCE5B /* AppDelegate.swift */; };
 		19190703253959F4001FCE5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190702253959F4001FCE5B /* SceneDelegate.swift */; };
 		19190708253959F4001FCE5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19190706253959F4001FCE5B /* Main.storyboard */; };
@@ -28,6 +31,7 @@
 		19190783253A2501001FCE5B /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190782253A2501001FCE5B /* NetworkClient.swift */; };
 		19190789253A30F0001FCE5B /* LineTVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190788253A30F0001FCE5B /* LineTVAPI.swift */; };
 		19190796253A3350001FCE5B /* LineTVAPI+Dramas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19190795253A3350001FCE5B /* LineTVAPI+Dramas.swift */; };
+		194077F3253CC0C90009D8D7 /* NSMutableAttributedString+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194077F2253CC0C90009D8D7 /* NSMutableAttributedString+Common.swift */; };
 		195D117D253B7097003184F7 /* DramaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D117C253B7097003184F7 /* DramaCell.swift */; };
 		195D1182253B7D8F003184F7 /* DramaCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D1181253B7D8F003184F7 /* DramaCellViewModel.swift */; };
 		195D1187253B8206003184F7 /* BasicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D1186253B8206003184F7 /* BasicCollectionViewCell.swift */; };
@@ -58,6 +62,9 @@
 		191139B8253C1629008A6F5E /* DramaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaListViewModel.swift; sourceTree = "<group>"; };
 		191139BD253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		191139C5253C3244008A6F5E /* UIColor+ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorSet.swift"; sourceTree = "<group>"; };
+		191139D6253C94AD008A6F5E /* DramaInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaInfoViewModel.swift; sourceTree = "<group>"; };
+		191139E9253C98F5008A6F5E /* DramaInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaInfoCell.swift; sourceTree = "<group>"; };
+		191139F1253CB4FC008A6F5E /* DaramaInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaramaInfoCellViewModel.swift; sourceTree = "<group>"; };
 		191906FD253959F4001FCE5B /* DramasSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DramasSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19190700253959F4001FCE5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19190702253959F4001FCE5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +87,7 @@
 		19190782253A2501001FCE5B /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		19190788253A30F0001FCE5B /* LineTVAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTVAPI.swift; sourceTree = "<group>"; };
 		19190795253A3350001FCE5B /* LineTVAPI+Dramas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineTVAPI+Dramas.swift"; sourceTree = "<group>"; };
+		194077F2253CC0C90009D8D7 /* NSMutableAttributedString+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Common.swift"; sourceTree = "<group>"; };
 		195D117C253B7097003184F7 /* DramaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaCell.swift; sourceTree = "<group>"; };
 		195D1181253B7D8F003184F7 /* DramaCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaCellViewModel.swift; sourceTree = "<group>"; };
 		195D1186253B8206003184F7 /* BasicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -115,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191139E7253C98C8008A6F5E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				191139E9253C98F5008A6F5E /* DramaInfoCell.swift */,
+				191139F1253CB4FC008A6F5E /* DaramaInfoCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		191906F4253959F4001FCE5B = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +212,9 @@
 		1919073825395B28001FCE5B /* DramaInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				191139E7253C98C8008A6F5E /* Cell */,
 				1919074325395C74001FCE5B /* DramaInfoViewController.swift */,
+				191139D6253C94AD008A6F5E /* DramaInfoViewModel.swift */,
 			);
 			path = DramaInfoViewController;
 			sourceTree = "<group>";
@@ -237,9 +256,8 @@
 		191907642539837C001FCE5B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				194077F1253CC0B70009D8D7 /* Extension */,
 				1919074925396890001FCE5B /* UIComponents */,
-				1919076A25398570001FCE5B /* UIImage+SFSymbol.swift */,
-				191139C5253C3244008A6F5E /* UIColor+ColorSet.swift */,
 				195D1186253B8206003184F7 /* BasicCollectionViewCell.swift */,
 				191139BD253C2333008A6F5E /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
@@ -253,6 +271,16 @@
 				19190795253A3350001FCE5B /* LineTVAPI+Dramas.swift */,
 			);
 			path = LineTV;
+			sourceTree = "<group>";
+		};
+		194077F1253CC0B70009D8D7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				191139C5253C3244008A6F5E /* UIColor+ColorSet.swift */,
+				1919076A25398570001FCE5B /* UIImage+SFSymbol.swift */,
+				194077F2253CC0C90009D8D7 /* NSMutableAttributedString+Common.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		195D117B253B707D003184F7 /* Cell */ = {
@@ -458,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19190796253A3350001FCE5B /* LineTVAPI+Dramas.swift in Sources */,
+				191139D7253C94AD008A6F5E /* DramaInfoViewModel.swift in Sources */,
 				19F7DE85253AF3E700D01A35 /* NetworkMonitor.swift in Sources */,
 				1919074425395C74001FCE5B /* DramaInfoViewController.swift in Sources */,
 				1919077E253A11EF001FCE5B /* StarView2.swift in Sources */,
@@ -470,11 +499,14 @@
 				195D117D253B7097003184F7 /* DramaCell.swift in Sources */,
 				19190701253959F4001FCE5B /* AppDelegate.swift in Sources */,
 				1919076B25398570001FCE5B /* UIImage+SFSymbol.swift in Sources */,
+				191139F2253CB4FC008A6F5E /* DaramaInfoCellViewModel.swift in Sources */,
+				194077F3253CC0C90009D8D7 /* NSMutableAttributedString+Common.swift in Sources */,
 				195D1187253B8206003184F7 /* BasicCollectionViewCell.swift in Sources */,
 				191139B9253C1629008A6F5E /* DramaListViewModel.swift in Sources */,
 				19190783253A2501001FCE5B /* NetworkClient.swift in Sources */,
 				19190703253959F4001FCE5B /* SceneDelegate.swift in Sources */,
 				1919075425396CE9001FCE5B /* StarView.swift in Sources */,
+				191139EA253C98F5008A6F5E /* DramaInfoCell.swift in Sources */,
 				1919070B253959F4001FCE5B /* DramasSample.xcdatamodeld in Sources */,
 				191139AF253C0F30008A6F5E /* OfflineCell.swift in Sources */,
 			);

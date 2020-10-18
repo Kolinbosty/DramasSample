@@ -9,7 +9,7 @@ import UIKit
 
 struct ColorSetProxy {
     var background: UIColor? {
-        return UIColor(named: "Background")
+        return UIColor(named: "BackgroundColor")
     }
 
     var title: UIColor? {

@@ -21,7 +21,8 @@ class DramaListViewController: UIViewController {
 
     private lazy var viewModel: DramaListViewModel = {
         return DramaListViewModel(collectionView: collectionView,
-                                  emptyResultView: emptyResultView)
+                                  emptyResultView: emptyResultView,
+                                  viewController: self)
     }()
 
     override func viewDidLoad() {
@@ -126,7 +127,6 @@ extension DramaListViewController {
         let layout = LeftAlignedCollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        layout.sectionInset = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
 
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

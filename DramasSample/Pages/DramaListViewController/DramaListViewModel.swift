@@ -17,18 +17,21 @@ class DramaListViewModel: NSObject {
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, BasicCollectionViewCellViewModel>
 
     private var dataSource: DataSource?
-
     private var dramas: [LineTVAPI.Drama] = []
 
     private weak var collectionView: UICollectionView?
     private weak var emptyResultView: UIView?
+    private weak var viewController: UIViewController?
 
     private var currentSearchText: String?
     private var isNetworkConnected: Bool = true
 
-    init(collectionView: UICollectionView?, emptyResultView: UIView?) {
+    init(collectionView: UICollectionView?,
+         emptyResultView: UIView?,
+         viewController: UIViewController) {
         self.collectionView = collectionView
         self.emptyResultView = emptyResultView
+        self.viewController = viewController
         super.init()
 
         setupCollectionView()
@@ -53,6 +56,7 @@ class DramaListViewModel: NSObject {
 
 // MARK: - CollectionView
 extension DramaListViewModel: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
     private func setupCollectionView() {
         guard let collectionView = collectionView else {
             assert(false, "Error: must create collection view first...")
@@ -89,8 +93,7 @@ extension DramaListViewModel: UICollectionViewDelegate, UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         guard let dataSource = dataSource else { return .zero }
-        let currentSnapshot = dataSource.snapshot()
-        let sectionType = currentSnapshot.sectionIdentifiers[section]
+        let sectionType = dataSource.sectionIdentifier(at: section)
 
         switch sectionType {
         case .drama:
@@ -98,6 +101,31 @@ extension DramaListViewModel: UICollectionViewDelegate, UICollectionViewDelegate
         case .offline:
             return UIEdgeInsets(top: 10.0, left: 0.0, bottom: 0.0, right: 0.0)
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        guard let dataSource = dataSource else { return false }
+
+        // Only drama can select
+        let isDrama = dataSource.sectionIdentifier(at: indexPath.section) == .drama
+        return isDrama
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let dataSource = dataSource,
+              let dramaVM = dataSource.itemIdentifier(for: indexPath) as? DramaCellViewModel else {
+            return
+        }
+
+        // Go to info page
+        let vc = DramaInfoViewController(dramaVM.dramaData)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension UICollectionViewDiffableDataSource {
+    func sectionIdentifier(at section: Int) -> SectionIdentifierType {
+        return snapshot().sectionIdentifiers[section]
     }
 }
 
@@ -127,6 +155,7 @@ extension DramaListViewModel {
     /// Construct & Apply Snapshot
     /// - Parameter checkEmpty: Will check empty result or not.
     func reloadValues(checkEmpty: Bool = true) {
+        // Create Snapshot
         var snapshot = Snapshot()
 
         // Network connection
@@ -143,7 +172,6 @@ extension DramaListViewModel {
             }
         }
 
-        // Create Snapshot
         let vms = searchResult.map { DramaCellViewModel($0) }
         snapshot.appendSections([.drama])
         snapshot.appendItems(vms)
@@ -151,6 +179,7 @@ extension DramaListViewModel {
         // Apply
         dataSource?.apply(snapshot)
 
+        // Others
         if checkEmpty {
             // Update empty view state
             emptyResultView?.isHidden = !searchResult.isEmpty
