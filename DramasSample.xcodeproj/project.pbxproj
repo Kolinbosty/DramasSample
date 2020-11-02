@@ -37,6 +37,8 @@
 		195D1187253B8206003184F7 /* BasicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195D1186253B8206003184F7 /* BasicCollectionViewCell.swift */; };
 		197644ED253CCB23000163F1 /* OfflineModeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197644EC253CCB23000163F1 /* OfflineModeStorage.swift */; };
 		197644F2253CDAFE000163F1 /* UIApplication+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197644F1253CDAFE000163F1 /* UIApplication+Common.swift */; };
+		19D52BE4254FAF1200DD6021 /* INTERVIEW.md in Resources */ = {isa = PBXBuildFile; fileRef = 19D52BE3254FAF1200DD6021 /* INTERVIEW.md */; };
+		19D52BEE254FB05400DD6021 /* INTERVIEW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D52BED254FB05400DD6021 /* INTERVIEW.swift */; };
 		19F7DE85253AF3E700D01A35 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F7DE84253AF3E700D01A35 /* NetworkMonitor.swift */; };
 		88857443F7AD716C2160DFF5 /* Pods_DramasSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EF867E60ECE9742F6EF7EF /* Pods_DramasSample.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,8 @@
 		195D1186253B8206003184F7 /* BasicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCollectionViewCell.swift; sourceTree = "<group>"; };
 		197644EC253CCB23000163F1 /* OfflineModeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineModeStorage.swift; sourceTree = "<group>"; };
 		197644F1253CDAFE000163F1 /* UIApplication+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Common.swift"; sourceTree = "<group>"; };
+		19D52BE3254FAF1200DD6021 /* INTERVIEW.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = INTERVIEW.md; sourceTree = "<group>"; };
+		19D52BED254FB05400DD6021 /* INTERVIEW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INTERVIEW.swift; sourceTree = "<group>"; };
 		19F7DE84253AF3E700D01A35 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		24EF867E60ECE9742F6EF7EF /* Pods_DramasSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DramasSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62C18098B3C6389AC09BF44F /* Pods-DramasSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DramasSample.release.xcconfig"; path = "Target Support Files/Pods-DramasSample/Pods-DramasSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		191906F4253959F4001FCE5B = {
 			isa = PBXGroup;
 			children = (
+				19D52BDA254FAEC300DD6021 /* INTERVIEW */,
 				191906FF253959F4001FCE5B /* DramasSample */,
 				19190719253959F5001FCE5B /* DramasSampleTests */,
 				19190724253959F5001FCE5B /* DramasSampleUITests */,
@@ -300,6 +305,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		19D52BDA254FAEC300DD6021 /* INTERVIEW */ = {
+			isa = PBXGroup;
+			children = (
+				19D52BE3254FAF1200DD6021 /* INTERVIEW.md */,
+				19D52BED254FB05400DD6021 /* INTERVIEW.swift */,
+			);
+			path = INTERVIEW;
+			sourceTree = "<group>";
+		};
 		902B01D8BF330F7F38142DE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D52BE4254FAF1200DD6021 /* INTERVIEW.md in Resources */,
 				19190710253959F5001FCE5B /* LaunchScreen.storyboard in Resources */,
 				1919070D253959F5001FCE5B /* Assets.xcassets in Resources */,
 				19190708253959F4001FCE5B /* Main.storyboard in Resources */,
@@ -505,6 +520,7 @@
 				195D1182253B7D8F003184F7 /* DramaCellViewModel.swift in Sources */,
 				195D117D253B7097003184F7 /* DramaCell.swift in Sources */,
 				19190701253959F4001FCE5B /* AppDelegate.swift in Sources */,
+				19D52BEE254FB05400DD6021 /* INTERVIEW.swift in Sources */,
 				1919076B25398570001FCE5B /* UIImage+SFSymbol.swift in Sources */,
 				191139F2253CB4FC008A6F5E /* DaramaInfoCellViewModel.swift in Sources */,
 				194077F3253CC0C90009D8D7 /* NSMutableAttributedString+Common.swift in Sources */,
